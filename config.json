@@ -1,0 +1,82 @@
+{
+  "_comment1": "~~~~~~database config~~~~~~~~",
+  "db_root": "all_image",
+  "train_db": "./all_image/label_train.txt",
+  "test_db": "./all_image/label_test.txt",
+
+  "_comment1.2": "~~~~~~datasize config [c,w,h] ~~~~~~~~",
+  "data_ext": ".png",
+
+  "norm_flag": false,
+  "norm_input": [null,null],
+  "norm_label": [0,255],
+
+  "batch_size_train":4,
+  "batch_size_test": 1,
+
+
+  "_comment1.3": "~~~~~~optics config [c,w,h] ~~~~~~~~",
+  "lam": 532e-9,
+  "size":[128,128],
+  "num_layer":3,
+
+
+
+  "_comment2": "~~~~~~~hardware config~~~~~~~",
+  "device_type": "cuda",
+  "cuda_idx": "0",
+
+  "_comment2.1": "~~~~~~~network config~~~~~~~",
+  "data_size": [1,128,128],
+  "label_size": [1,128,128],
+  "model_name": "onn",
+
+
+  "last_model_weight": "",
+
+  "epochs":21,
+  "learning_rate": 1e-3,
+  "optimizer": "adam",
+  "momentum": 0.9,
+  "weight_decay": 1e-5,
+
+  "scheduler_mode": "multi",
+  "gamma": 0.1,
+  "last_epoch": -1,
+  "step_size": 20,
+  "milestones": [45],
+  "T_max": 20,
+  "eta_min": 1e-8,
+
+
+
+  "_comment2.3": "~~~~~~~loss config~~~~~~~",
+  "loss_function": "npcc",
+  "loss_function_d": "ce",
+  "loss_function_g": "ce",
+
+  "_comment2.4": "~~~~~~~relative dir config~~~~~~~",
+  "model_save_dir": "weight",
+  "save_train_img": true,
+  "save_test_img": true,
+  "train_result_save_dir": "train_res",
+  "test_result_save_dir": "test_res",
+  "train_result_save_dir_d": "train_res_d",
+  "train_result_save_dir_g": "train_res_g",
+  "test_result_save_dir_d": "test_res_d",
+  "test_result_save_dir_g": "test_res_g",
+
+  "_comment3": "~~~~~~~eval config~~~~~~~",
+  "batch_size_eval": 1,
+  "eval_loss": "mse",
+  "trained_model_weight": "",
+  "eval_result_save_dir": "eval_res",
+  "text_save_filename": "eval_result_01.txt",
+
+  "_comment4": "~~~~~~~logger config~~~~~~~",
+  "batch_print": 1,
+  "log_filename_train_test": "log_train_test_01.txt",
+  "log_filename_eval": "log_eval_01.txt",
+  "visualization_train_test": "./visual_train_test_01",
+  "visualization_eval": "./visual_eval_01"
+}
